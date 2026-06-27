@@ -1,0 +1,47 @@
+/* Reset some default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #ff385c;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Main Section */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+/* Add Home Button */
+a {
+  text-decoration: none;
+  background-color: #ff385c;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+/* Hover Effect */
+a:hover {
+  background-color: #e11d48;
+  transform: scale(1.05);
+}

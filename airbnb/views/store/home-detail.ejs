@@ -1,0 +1,77 @@
+<%- include('../partials/head') %>
+  </head>
+  <body class="bg-slate-100">
+    <%- include('../partials/nav') %>
+    <main class="min-h-screen py-12 sm:py-16">
+      <section class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="overflow-hidden rounded-[2rem] bg-gradient-to-br from-white via-slate-50 to-slate-100 p-6 shadow-[0_25px_80px_-30px_rgba(15,23,42,0.35)] ring-1 ring-slate-200 sm:p-10">
+          <div class="text-center mb-10">
+            <p class="text-sm uppercase tracking-[0.24em] text-sky-600 font-semibold">Featured Stay</p>
+            <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">Home Details</h1>
+            <p class="mx-auto mt-3 max-w-2xl text-base leading-7 text-slate-600">Review the full home summary, pricing, rating, and download the house rules before booking.</p>
+          </div>
+
+          <div class="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
+            <div class="overflow-hidden rounded-[1.75rem] bg-slate-900 shadow-xl shadow-slate-400/10">
+              <% if (home.photo) { %>
+                <img src="<%= home.photo %>" alt="<%= home.houseName %>" class="h-96 w-full object-cover object-center" />
+              <% } else { %>
+                <div class="flex h-96 items-center justify-center bg-slate-800 text-slate-200">No image available</div>
+              <% } %>
+            </div>
+
+            <div class="space-y-6 rounded-[1.75rem] bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p class="text-sm uppercase tracking-[0.24em] text-sky-500 font-semibold">Property</p>
+                  <h2 class="mt-2 text-3xl font-semibold text-slate-900"><%= home.houseName %></h2>
+                </div>
+                <div class="rounded-3xl bg-slate-50 px-5 py-4 text-right shadow-sm ring-1 ring-slate-200">
+                  <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Rating</p>
+                  <p class="mt-2 text-2xl font-bold text-amber-500">★ <%= home.rating || 'N/A' %></p>
+                </div>
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div class="rounded-3xl border border-slate-200 bg-slate-50 p-5">
+                  <p class="text-xs uppercase tracking-[0.24em] text-slate-500 mb-2">Location</p>
+                  <p class="text-lg font-semibold text-slate-700"><%= home.location %></p>
+                </div>
+                <div class="rounded-3xl border border-slate-200 bg-slate-50 p-5">
+                  <p class="text-xs uppercase tracking-[0.24em] text-slate-500 mb-2">Price Per Night</p>
+                  <p class="text-lg font-semibold text-emerald-600">$<%= home.price %></p>
+                </div>
+              </div>
+
+              <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+                <h3 class="text-lg font-semibold text-slate-900 mb-4">Why you’ll love this place</h3>
+                <ul class="space-y-3 text-slate-600">
+                  <li class="flex gap-3">
+                    <span class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-sky-100 text-sky-600">✓</span>
+                    <span>Comfortable rooms with modern amenities</span>
+                  </li>
+                  <li class="flex gap-3">
+                    <span class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-sky-100 text-sky-600">✓</span>
+                    <span>Great location close to local attractions</span>
+                  </li>
+                  <li class="flex gap-3">
+                    <span class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-sky-100 text-sky-600">✓</span>
+                    <span>Easy booking process with friendly support</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-2">
+               
+                <form action="/favourites" method="post" class="inline-flex w-full">
+                  <input type="hidden" name="id" value="<%= home._id %>" />
+                  <button type="submit" class="inline-flex w-full items-center justify-center rounded-3xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-600/20 transition duration-300 hover:bg-emerald-500">Add to favourites</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

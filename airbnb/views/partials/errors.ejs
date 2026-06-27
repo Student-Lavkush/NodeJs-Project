@@ -1,0 +1,16 @@
+ <% if(errors.length > 0){ %>
+          <div class="rounded-2xl border border-red-200 bg-red-50 p-5">
+            <div class="mb-3 flex items-center gap-2">
+              <span class="text-lg font-bold text-red-500">⚠️</span>
+              <p class="font-semibold text-red-700">Please fix the following errors:</p>
+            </div>
+            <ul class="space-y-2">
+              <% errors.forEach(error => { %>
+              <li class="flex items-start gap-2 text-sm text-red-600">
+                <span class="mt-1 text-red-400">•</span>
+                <span><%= error %></span>
+              </li>
+              <% }); %>
+            </ul>
+          </div>
+          <% } %>
