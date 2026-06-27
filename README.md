@@ -77,17 +77,3 @@ Add JWT authentication
 Add booking & payment system
 Deploy on cloud (Render / Vercel / AWS)
 Add React frontend (optional upgrade)
-👨‍💻 Author
-
-Lavkush Parashar
-
-If you want next level improvement, I can help you:
-
-👉 
-make this README “internship-ready portfolio grade” (with badges, screenshots, GIF demo)
-👉 or 
-help you deploy your Airbnb clone live
-👉 or 
-convert this into REST API + React frontend architecture
-
-Just tell 👍
